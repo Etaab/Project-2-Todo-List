@@ -1,7 +1,16 @@
 .App {
   text-align: center;
+  border: black solid 5px;
+}
+
+.Todo span{
+  
 }
 
 .Todo{
   border: blue solid 3px;
+}
+
+.Add{
+  border: green solid 3px;
 }
