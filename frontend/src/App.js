@@ -44,19 +44,33 @@ export default function App() {
   });
  }
 
-  const mapOverTasks = tasks.map((taskObj, i) => ( 
-    <Todo key={i} task={taskObj}/>
-    ));
+const deleteTodo = (id) => {
+  axios
+  .delete(`http://localhost:5000/tasks/${id}`)
+  //     ('http://localhost:5000/tasks/${id}')
+  .then((response) => {
+   // console.log('RESPONSE: ', response);
+    console.log('DATA: ', response.data);
+    //setTasks(response.data);
+    getData()
+    //change react hooks state using spread operator
+  })
+  .catch((err) => {
+    console.log('ERR: ', err);
+  });
 
+} 
+  const mapOverTasks = tasks.map((taskObj, i) => ( 
+    <Todo key={i} task={taskObj} deleteTodo={deleteTodo}/>
+    ));
   return (
     <div className="App">
       <p>App</p>
-      {/* when click on this button
-      should call function bring Data */}
+      {/* click on button
+      should  bring all Data */}
       <button onClick={getData}>GET TASKS</button>
       <Add createFunc={postNewTodo}/>
       {mapOverTasks}
     </div>
   );
 }
-

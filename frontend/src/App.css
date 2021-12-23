@@ -1,16 +1,18 @@
 .App {
   text-align: center;
-  border: black solid 5px;
+  border: white solid 5px;
+  background-color: rgb(156, 236, 236);
 }
 
 .Todo span{
-  
+ margin: 0px 10px 10px;  
 }
 
 .Todo{
-  border: blue solid 3px;
+  color: blue;
+  border: white solid 3px;
 }
 
 .Add{
-  border: green solid 3px;
+  
 }

@@ -8,7 +8,6 @@ export default function Add(props) {
         console.log('createNewTodo from ADD');
         props.createFunc({title: newTitle, isCompleted:false});
     };
-    
     return (
         <div className='Add'>
             <input type='text' placeholder='Write new title here ...' onChange={(e) => {
