@@ -9,7 +9,13 @@
 }
 
 .Todo{
-  color: blue;
+  color: rgb(2, 59, 59);
   border: white solid 3px;
 }
 
+.Add{
+  background-color: rgb(2, 59, 59);
+}
+#t1{
+  background-color: rgb(2, 59, 59);
+}
