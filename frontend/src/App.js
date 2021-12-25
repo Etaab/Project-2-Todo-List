@@ -112,27 +112,29 @@ const filterData = (status) => {
     ));
   return (
     <div className="App">
-      <p id='t2'>أهداف اليوم</p>
+      <br></br>
+      <b id='t2'>أهداف اليوم</b>
+      <Add createFunc={postNewTodo}/>
       {/* click on button should  bring all Data */}
-      <button id='t1' onClick={getData}>GET TASKS</button>
-      <button id='t1' onClick={deleteTasks}>DELETE  COMPLETED TASKS</button>
+      
       <button id='t1'
        onClick={() => {
         filterData(true)
        }}
       >
-        GET DONE
+        المهام المنتهية
       </button>
       <button id='t1'
       onClick={() => {
         filterData(false)
         }}
       >
-        GET PENDING
+        المهام الغير منتهية 
       </button>
-
-      <Add createFunc={postNewTodo}/>
+      <button id='t1' onClick={getData}>كل المهام </button>
       {mapOverTasks}
+      <button id='t1' onClick={deleteTasks}>حذف كل المهام </button>
+
     </div>
   );
 }

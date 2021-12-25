@@ -16,7 +16,6 @@
   color: rgb(37, 133, 133);
   border:white 1px solid;
   border-radius : 10px  ;
-  text-align: center;
   font-style: italic ;
 
 }
@@ -25,7 +24,6 @@
   text-align: center;
 }
 #t1{
-  text-align: center;
   border-radius : 5px  ;
   font-style: italic ;
   background-color: rgb(11, 129, 129);
