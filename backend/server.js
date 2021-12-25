@@ -27,7 +27,7 @@ app.get("/tasks", (req, res) => {
 });
 
 //           ? key = value && key = value
-  app.get("/filter", (req, res) => {
+app.get("/filter", (req, res) => {
     console.log(req.query);
     Todo.find({ isCompleted: req.query.isCompleted }, (err,data) => {
       if (err) {
