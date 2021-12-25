@@ -112,18 +112,18 @@ const filterData = (status) => {
     ));
   return (
     <div className="App">
-      <p>أهداف اليوم</p>
+      <p id='t2'>أهداف اليوم</p>
       {/* click on button should  bring all Data */}
-      <button onClick={getData}>GET TASKS</button>
-      <button onClick={deleteTasks}>DELETE  COMPLETED TASKS</button>
-      <button
+      <button id='t1' onClick={getData}>GET TASKS</button>
+      <button id='t1' onClick={deleteTasks}>DELETE  COMPLETED TASKS</button>
+      <button id='t1'
        onClick={() => {
         filterData(true)
        }}
       >
         GET DONE
       </button>
-      <button 
+      <button id='t1'
       onClick={() => {
         filterData(false)
         }}

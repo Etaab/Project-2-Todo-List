@@ -13,7 +13,7 @@ export default function Add(props) {
             <input type='text' placeholder='Write new title here ...' onChange={(e) => {
              setNewTitle(e.target.value)
             }} />
-            <button onClick={createNewTodo}>Create New Todo</button>
+            <button id='t1' onClick={createNewTodo}>Create New Todo</button>
         </div>
     )
 }
