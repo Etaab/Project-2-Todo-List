@@ -26,6 +26,7 @@
 }
 #t1{
   text-align: center;
+  border-radius : 5px  ;
   font-style: italic ;
   background-color: rgb(11, 129, 129);
 }
