@@ -4,6 +4,7 @@ import './App.css';
 import axios from 'axios';
 import Todo from './components/Todo';
 import Add from './components/Add';
+import Register from './components/Register'
 
 export default function App() {
   const[tasks, setTasks] = useState([])
@@ -114,7 +115,7 @@ const filterData = (status) => {
     <div className="App">
       <br></br>
       <b id='t2'>أهداف اليوم</b>
-      <Add createFunc={postNewTodo}/>
+      {/*<Add createFunc={postNewTodo}/>*/}
       {/* click on button should  bring all Data */}
       
       <button id='t1'
@@ -131,8 +132,9 @@ const filterData = (status) => {
       >
         المهام الغير منتهية 
       </button>
+      <Register/>
       <button id='t1' onClick={getData}>كل المهام </button>
-      {mapOverTasks}
+     {/* {mapOverTasks}*/}
       <button id='t1' onClick={deleteTasks}>حذف كل المهام </button>
 
     </div>
