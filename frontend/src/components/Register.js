@@ -29,32 +29,34 @@ export default function Register() {
     return (
         <div className='Register'>
             <form action=''>
-            <label htmFor="email">Email</label>
+            <label htmlFor="email">Email</label>
             <input
              type="email"
              placeholder='Write email here ...' 
              onChange={(e) => {
                 setEmail(e.target.value);
             }}
-            // value = {email}
+             value = {email}
             />
             <br/>
-            <label htmFor="password">Password</label>
+            <label htmlFor="password">Password</label>
             <input
              type="password" 
              placeholder='Write password here ...'
              onChange={(e) => {
                 setPassword(e.target.value);
             }}
+            value = {password}
             />
             <br/>
-            <label htmFor="username">Username</label>
+            <label htmlFor="username">Username</label>
             <input
              type="text"
              placeholder='Write username here ...' 
              onChange={(e) => {
                 setUsername(e.target.value);
             }}
+            value = {username}
             />
             <br/>
             <input type="submit" value="Register" onClick={registerFunc} />
