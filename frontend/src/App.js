@@ -10,7 +10,9 @@ import Register from './components/Register'
 import Login from './components/Login';
 
 export default function App() {
-  const[tasks, setTasks] = useState([])
+  const[tasks, setTasks] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState("");
 
   useEffect (() => {
     getData()
@@ -117,14 +119,26 @@ const filterData = (status) => {
   return (
     <div className="App">
       <b id='t2'>أهداف اليوم</b>
+      <p>Name:{username}</p>
+
+<nav>
+  <Link to='/home'>Home</Link> {' | '}
+  <Link to='/login'>Login</Link> {' | '}
+  <Link to='/register'>Register</Link> 
+</nav>      
 
 <Routes>
   <Route path="/home"
    element={
     <div className='Home'>
-      
       {/* click on button should  bring all Data */}
       <br />
+      <button id='t1'
+       onClick={deleteTasks}
+       >
+        حذف كل المهام
+      </button>
+
       <button id='t1'
        onClick={() => {
         filterData(true)
@@ -132,6 +146,7 @@ const filterData = (status) => {
       >
         المهام المنتهية
       </button>
+
       <button id='t1'
       onClick={() => {
         filterData(false)
@@ -140,14 +155,23 @@ const filterData = (status) => {
         المهام الغير منتهية 
       </button>
 
-      <button id='t1' onClick={getData}>كل المهام </button>
-      <button id='t1' onClick={deleteTasks}>حذف كل المهام </button>
+      <button id='t1'
+       onClick={getData}
+       >
+         كل المهام
+      </button>
+
       <Add createFunc={postNewTodo}/>
       {mapOverTasks}
       </div>
       }
  />
-  <Route path="login" element={<Login />} />
+  <Route 
+  path="login" 
+  element={
+  <Login 
+  setIsLoggedIn={setIsLoggedIn}
+  setUsername={setUsername}/>} />
   <Route path="register" element={<Register />} />
 </Routes>
       
