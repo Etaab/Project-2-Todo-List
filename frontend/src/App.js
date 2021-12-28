@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 
 import axios from 'axios';
+import { Routes, Route, Link } from "react-router-dom";
+
 import Todo from './components/Todo';
 import Add from './components/Add';
 import Register from './components/Register'
@@ -115,7 +117,12 @@ const filterData = (status) => {
   return (
     <div className="App">
       <b id='t2'>أهداف اليوم</b>
-      {/*<Add createFunc={postNewTodo}/>*/}
+
+<Routes>
+  <Route path="/home"
+   element={
+    <div className='Home'>
+      
       {/* click on button should  bring all Data */}
       <br />
       <button id='t1'
@@ -134,11 +141,16 @@ const filterData = (status) => {
       </button>
 
       <button id='t1' onClick={getData}>كل المهام </button>
-     {/* {mapOverTasks}*/}
       <button id='t1' onClick={deleteTasks}>حذف كل المهام </button>
-      <Register/>
-      <Login/>
-
-    </div>
+      <Add createFunc={postNewTodo}/>
+      {mapOverTasks}
+      </div>
+      }
+ />
+  <Route path="login" element={<Login />} />
+  <Route path="register" element={<Register />} />
+</Routes>
+      
+    </div> 
   );
 }
