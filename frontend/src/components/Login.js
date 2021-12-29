@@ -28,10 +28,9 @@ export default function Login(props) {
 
     return (
         
-        <div className='Login'>
+        <div className='text-center'>
             <form action=''>
-                <label htmlFor="" className="btn btn-outline-light">Email:</label>
-                <p> </p>
+                <label htmlFor="" id='t1' className=" m-1 btn btn-outline-light">Email:</label>
                 <input
                  onChange={(e) => {
                     setEmail(e.target.value)
@@ -39,12 +38,11 @@ export default function Login(props) {
                 value = {email}
                 type="text"
                 placeholder = 'Write email here ....'
-                className="btn btn-light"
+                className="m-1 btn btn-light"
                 />
                 <br />
-                <br/>
-                <label htmlFor="" className="btn btn-outline-light">Password:</label>
-                <p> </p>
+                <label htmlFor="" id='t1' className="m-1 btn btn-outline-light">Password:</label>
+
                 <input 
                  onChange={(e) => {
                     setPassword(e.target.value)
@@ -52,15 +50,61 @@ export default function Login(props) {
                 value = {password}
                 type="password"
                 placeholder='Write password here ....'
-                className="btn btn-light"
+                className="m-1 btn btn-light"
                 />
                 <br />
-                {/* <button type="button" class="btn btn-light">Light</button> */}
-                <input type="submit" value="login" onClick={loginFunc} className="btn btn-outline-light"/>
+               {/*<button type="button" class="btn btn-light">Light</button> */}
+                <input type="submit" value="login" onClick={loginFunc} id='t1' className="m-1 btn btn-outline-light"/>
                 <br/>
-                <br/>
-                <Link to='/Register' className="btn btn-outline-light" >Don't Have An Account?</Link>
+                <Link to='/Register' className="m-1 btn btn-outline-light" id='t1' >Don't Have An Account?</Link>
             </form>
+            
+       {/*     
+      <form>
+        <div class="form-floating mb-3">
+            
+             <input 
+              type="email"
+              class="form-control"
+              id="floatingInput" 
+             // placeholder="name@example.com"
+              onChange={(e) => {
+                setEmail(e.target.value)
+               }}
+            value = {email} 
+             />
+             <label for="floatingInput" id='t1'>Email address</label>
+        </div>
+        <div class="mb-3 form-floating">
+            <input
+             type="password" 
+             class="form-control" 
+             id="floatingPassword" 
+             //placeholder="Password"
+             onChange={(e) => {
+                setPassword(e.target.value)
+              }}
+            value = {password}
+             />
+            <label for="floatingPassword" id='t1'>Password</label>
+        </div> 
+
+            <input
+             type="submit"
+             value="login" 
+             onClick={loginFunc}
+             id='t1' 
+             className="btn btn-outline-light"
+             />
+             
+            <Link 
+            to='/Register'
+            className="btn btn-outline-light" 
+            id='t1' >
+             Don't Have An Account?
+            </Link>
+             </form>
+              */}
         </div>
     );
 }

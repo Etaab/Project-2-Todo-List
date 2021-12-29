@@ -30,11 +30,11 @@ export default function Register() {
     return (
         <div className='Register'>
             <form action=''>
-            <label htmlFor="email" className="btn btn-outline-light">Email</label><p> </p>
+            <label htmlFor="email" id='t1' className="m-1 btn btn-outline-light">Email</label>
             <input
              type="email"
              placeholder='Write email here ...' 
-             className="btn btn-light"
+             className="m-1 btn btn-light"
              onChange={(e) => {
                 setEmail(e.target.value);
             }}
@@ -42,33 +42,31 @@ export default function Register() {
             />
             <br/>
             <br/>
-            <label htmlFor="password" className="btn btn-outline-light">Password</label><p> </p>
+            <label htmlFor="password" id='t1' className="m-1 btn btn-outline-light">Password</label>
             <input
              type="password" 
              placeholder='Write password here ...'
-             className="btn btn-light"
+             className="m-1 btn btn-light"
              onChange={(e) => {
                 setPassword(e.target.value);
             }}
             value = {password}
             />
             <br/>
-            <br/>
-            <label htmlFor="username" className="btn btn-outline-light">Username</label><p> </p>
+            <label htmlFor="username" id='t1' className=" m-1 btn btn-outline-light">Username</label>
             <input
              type="text"
              placeholder='Write username here ...'
-             className="btn btn-light" 
+             className="m-1 btn btn-light" 
              onChange={(e) => {
                 setUsername(e.target.value);
             }}
             value = {username}
             />
             <br/>
-            <input type="submit" value="Register" onClick={registerFunc} className="btn btn-outline-light" />
+            <input type="submit" value="Register" id='t1' onClick={registerFunc} className="m-1 btn btn-outline-light" />
             <br/>
-            <br/>
-            <Link to='/Login' className="btn btn-outline-light">Have An Account?</Link>
+            <Link to='/Login' className="m-1 btn btn-outline-light" id='t1' >Have An Account?</Link>
             </form>
         </div>
     )

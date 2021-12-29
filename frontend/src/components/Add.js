@@ -17,7 +17,7 @@ export default function Add(props) {
             }} />
             <button
             id='t1' onClick={createNewTodo} 
-            className="btn btn-outline-light"
+            className="m-1 btn btn-outline-light"
             > إضافة مهمة جديده</button>
         </div>
     )
