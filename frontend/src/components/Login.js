@@ -27,9 +27,11 @@ export default function Login(props) {
     };
 
     return (
+        
         <div className='Login'>
             <form action=''>
-                <label htmlFor="">Email:</label>
+                <label htmlFor="" className="btn btn-outline-light">Email:</label>
+                <p> </p>
                 <input
                  onChange={(e) => {
                     setEmail(e.target.value)
@@ -37,9 +39,12 @@ export default function Login(props) {
                 value = {email}
                 type="text"
                 placeholder = 'Write email here ....'
+                className="btn btn-light"
                 />
                 <br />
-                <label htmlFor="">Password:</label>
+                <br/>
+                <label htmlFor="" className="btn btn-outline-light">Password:</label>
+                <p> </p>
                 <input 
                  onChange={(e) => {
                     setPassword(e.target.value)
@@ -47,13 +52,15 @@ export default function Login(props) {
                 value = {password}
                 type="password"
                 placeholder='Write password here ....'
+                className="btn btn-light"
                 />
                 <br />
-                <input type="submit" value="login" onClick={loginFunc}/>
+                {/* <button type="button" class="btn btn-light">Light</button> */}
+                <input type="submit" value="login" onClick={loginFunc} className="btn btn-outline-light"/>
                 <br/>
-                <Link to='/Register'>Don't Have An Account?</Link>
+                <br/>
+                <Link to='/Register' className="btn btn-outline-light" >Don't Have An Account?</Link>
             </form>
-            
         </div>
     );
 }

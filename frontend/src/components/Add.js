@@ -10,10 +10,15 @@ export default function Add(props) {
     };
     return (
         <div className='Add'>
-            <input type='text' placeholder='اكتب هنا ...' onChange={(e) => {
+            <input type='text' 
+            className="btn btn-light"
+            placeholder='اكتب هنا ...' onChange={(e) => {
              setNewTitle(e.target.value)
             }} />
-            <button id='t1' onClick={createNewTodo}> إضافة مهمة جديده</button>
+            <button
+            id='t1' onClick={createNewTodo} 
+            className="btn btn-outline-light"
+            > إضافة مهمة جديده</button>
         </div>
     )
 }

@@ -30,39 +30,45 @@ export default function Register() {
     return (
         <div className='Register'>
             <form action=''>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email" className="btn btn-outline-light">Email</label><p> </p>
             <input
              type="email"
              placeholder='Write email here ...' 
+             className="btn btn-light"
              onChange={(e) => {
                 setEmail(e.target.value);
             }}
              value = {email}
             />
             <br/>
-            <label htmlFor="password">Password</label>
+            <br/>
+            <label htmlFor="password" className="btn btn-outline-light">Password</label><p> </p>
             <input
              type="password" 
              placeholder='Write password here ...'
+             className="btn btn-light"
              onChange={(e) => {
                 setPassword(e.target.value);
             }}
             value = {password}
             />
             <br/>
-            <label htmlFor="username">Username</label>
+            <br/>
+            <label htmlFor="username" className="btn btn-outline-light">Username</label><p> </p>
             <input
              type="text"
-             placeholder='Write username here ...' 
+             placeholder='Write username here ...'
+             className="btn btn-light" 
              onChange={(e) => {
                 setUsername(e.target.value);
             }}
             value = {username}
             />
             <br/>
-            <input type="submit" value="Register" onClick={registerFunc} />
+            <input type="submit" value="Register" onClick={registerFunc} className="btn btn-outline-light" />
             <br/>
-            <Link to='/Login'>Have An Account?</Link>
+            <br/>
+            <Link to='/Login' className="btn btn-outline-light">Have An Account?</Link>
             </form>
         </div>
     )
