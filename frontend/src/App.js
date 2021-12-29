@@ -124,9 +124,9 @@ const logoutFunc = () => {
   return (
     <div className="App">
     
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <span class=" navbar-text" id='t1' >
+<nav className="navbar navbar-light bg-light">
+  <div className="container-fluid">
+    <span className=" navbar-text" id='t1' >
     أهداف اليوم
     </span>
   </div>
@@ -135,11 +135,11 @@ const logoutFunc = () => {
       <p className="btn btn-outline-light" id='t1'
       >Name:{username}</p>
   
-<nav class=" navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class=" navbar-brand" href="#" id='t1'>القائمة </a>
+<nav className=" navbar navbar-expand-lg navbar-light bg-light">
+  <div className="container-fluid">
+    <a className=" navbar-brand" href="#" id='t1'>القائمة </a>
     <button
-      class="navbar-toggler"
+      className="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarNav"
@@ -147,22 +147,22 @@ const logoutFunc = () => {
       aria-expanded="false" 
       aria-label="Toggle navigation"
       >
-      <span class="navbar-toggler-icon"></span>
+      <span className="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
+    <div className="collapse navbar-collapse" id="navbarNav">
+      <ul className="navbar-nav">
+        <li className="nav-item">
           <Link to='/home' className="nav-link active">
             Home
           </Link>
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
           <Link to='/login' className="nav-link">
             Login
           </Link>
         </li>
-        <li class="nav-item">
-          <Link to='/register' class="nav-link">
+        <li className="nav-item">
+          <Link to='/register' className="nav-link">
             Register
           </Link>
         </li>
