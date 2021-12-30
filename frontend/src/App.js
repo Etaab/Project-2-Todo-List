@@ -132,8 +132,7 @@ const logoutFunc = () => {
   </div>
 </nav>
       <br/>
-      <p className="btn btn-outline-light" id='t1'
-      >Name:{username}</p>
+      
   
 <nav className=" navbar navbar-expand-lg navbar-light bg-light">
   <div className="container-fluid">
@@ -166,6 +165,21 @@ const logoutFunc = () => {
             Register
           </Link>
         </li>
+        <button
+          onClick={logoutFunc} 
+          className="m-1 btn btn-outline-light" id='t1'>
+          Logout
+        </button>  
+        <button
+          id='t1'
+          type="button"
+          className="m-1 btn btn-outline-light"
+          data-bs-toggle="popover"
+          title="Todo List"
+          data-bs-content="Welcome to Todo List Web Application"
+        >
+          {username ? "Welcome " + username : "Please Login"}{" "}
+        </button>
       </ul>
     </div>
   </div>
@@ -176,6 +190,7 @@ const logoutFunc = () => {
   <Route path="/home"
    element={
     <div className='Home'>
+      <div className='Home mb-3'>
       {/* click on button should  bring all Data */}
       <br />
       <button id='t1'
@@ -209,14 +224,17 @@ const logoutFunc = () => {
        >
          كل المهام
       </button>
+      </div>
 
       <Add createFunc={postNewTodo}/>
+      <div className="list-group">
       {mapOverTasks}
       </div>
+    </div>
       }
  />
   <Route 
-  path="login" 
+  path="/login" 
   element={
   <Login 
   setIsLoggedIn={setIsLoggedIn}
@@ -225,11 +243,7 @@ const logoutFunc = () => {
   <Route path="register" element={<Register />} />
 </Routes>
 <br/>
-<button
- onClick={logoutFunc} 
- className="m-1 btn btn-outline-light" id='t1'>
-  Logout
-</button>
+
       
     </div> 
   );
