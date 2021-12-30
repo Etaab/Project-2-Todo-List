@@ -123,14 +123,8 @@ const logoutFunc = () => {
     ));
   return (
     <div className="App">
-    
-<nav className="navbar navbar-light bg-light">
-  <div className="container-fluid">
-    <span className=" navbar-text" id='t1' >
-    أهداف اليوم
-    </span>
-  </div>
-</nav>
+     {/* <p>Name: {username}</p> */}
+
       <br/>
       
   

@@ -5,6 +5,10 @@ import  { Link } from 'react-router-dom';
 export default function Login(props) {
     const [email, setEmail] = useState('Et_1@hotmail.com');
     const [password, setPassword] = useState('1234');
+    const [wrongEmail, setWrongEmail] = useState(false);
+    const [loginStatus, setLoginStatus] = useState(0);
+    const [loginMessage, setLoginMessage] = useState('')
+    // 200 || 400 || 404 
 
     const loginFunc = (e) => {
         e.preventDefault();
@@ -16,12 +20,18 @@ export default function Login(props) {
       axios
       .post(`http://localhost:5000/users/login`, userInfo)
       .then((response) => {
-          console.log("DATA: ", response.data);
+          setLoginStatus(response.status);
+          setLoginMessage(response.data.message);
+          //console.log("DATA: ", response.data);
           props.setIsLoggedIn(true);
           props.setUsername(response.data.username);
       })
       .catch((err) => {
-          console.log("ERR: ", err);
+         // console.log("ERR: ", err);
+          setLoginStatus(err.response.status);
+          setLoginMessage(err.response.data.message);
+          props.setIsLoggedIn(false);
+          props.setUsername(null);
       });
 
     };
@@ -30,6 +40,7 @@ export default function Login(props) {
         
         <div className='text-center'>
             <form action=''>
+              <div className='mb-3'>
                 <label htmlFor="" id='t1' className=" m-1 btn btn-outline-light">Email:</label>
                 <input
                  onChange={(e) => {
@@ -53,13 +64,33 @@ export default function Login(props) {
                 className="m-1 btn btn-light"
                 />
                 <br />
+                {loginStatus === 200 &&(
+                    <div className="alert alert-success m-1" 
+                    role="alert">
+                       {loginMessage}
+                    </div> 
+                )}
+
+                 {(loginStatus === 400 || loginStatus === 404) &&(
+                    <div className="alert alert-danger m-1" 
+                     role="alert">
+                       {loginMessage}
+                    </div> 
+                )} 
+
                {/*<button type="button" class="btn btn-light">Light</button> */}
                 <input type="submit" value="login" onClick={loginFunc} id='t1' className="m-1 btn btn-outline-light"/>
                 <br/>
                 <Link to='/Register' className="m-1 btn btn-outline-light" id='t1' >Don't Have An Account?</Link>
+
+              </div>
             </form>
-            
-       {/*     
+        </div>
+       
+    );
+}
+
+{/*     
       <form>
         <div className="form-floating mb-3">
             
@@ -105,6 +136,3 @@ export default function Login(props) {
             </Link>
              </form>
               */}
-        </div>
-    );
-}

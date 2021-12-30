@@ -53,7 +53,7 @@ export default function Register() {
             value = {password}
             />
             <br/>
-            <label htmlFor="username" id='t1' className=" m-1 btn btn-outline-light">Username</label>
+            <label htmlFor="username" id='t1' className=" mt-1 btn btn-outline-light">Username</label>
             <input
              type="text"
              placeholder='Write username here ...'
